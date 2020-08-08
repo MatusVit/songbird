@@ -1,5 +1,5 @@
 import React from "react";
-import AudioPlayer from "./AudioPlayer";
+import Player from "./Player";
 
 export default ({ cardBird }) => {
   return (
@@ -11,7 +11,7 @@ export default ({ cardBird }) => {
           <h3>{cardBird.name}</h3>
         </li>
         <li className="list-group-item">
-          <AudioPlayer />
+          <Player url={cardBird.audio} />
         </li>
       </ul>
     </section>
