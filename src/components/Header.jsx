@@ -1,6 +1,15 @@
 import React from "react";
 
-export default () => {
+export default ({ array }) => {
+  const listQuestionElementsArray = array.map((question) => (
+    <li
+      className="list-group-item flex-fill text-center py-md-2 py-1"
+      key={question.toString()}
+    >
+      {question}
+    </li>
+  ));
+
   return (
     <header className="header">
       <div className="row">
@@ -10,10 +19,10 @@ export default () => {
         </div>
       </div>
 
-      <div className="row">
+      <div className="row mt-3">
         <div className="col">
-          <ul className="listQuestion">
-            <li>Разминка</li>
+          <ul className="list-question list-group list-group-horizontal-md">
+            {listQuestionElementsArray}
           </ul>
         </div>
       </div>
