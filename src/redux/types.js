@@ -1,0 +1,1 @@
+export const NEXT_STEP = 'GAME/NEXT_STEP';

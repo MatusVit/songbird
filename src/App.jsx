@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="container pt-3 text-white">
       <Header array={listQuestionArray} />
-      <SectionQuestion cardBird={currentBirdCard} />
+      <SectionQuestion />
 
       <div className="row">
         <div className="col-12 col-md-6 pr-2">

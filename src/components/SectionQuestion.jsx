@@ -1,7 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
 import Player from "./Player";
 
-export default ({ cardBird }) => {
+const SectionQuestion = ({ cardBird }) => {
   return (
     <section className="section-question jumbotron rounded my-3 p-3 d-flex">
       <img className="question__image" src={cardBird.image} alt="bird" />
@@ -17,3 +18,14 @@ export default ({ cardBird }) => {
     </section>
   );
 };
+
+const mapStateToProps = (state) => {
+  const step = state.gameState.step;
+  const currentBird = state.gameState.currentBirdNumber;
+  const cardBird = state.data.dataBirdsArray[step][currentBird];
+  return {
+    cardBird,
+  };
+};
+
+export default connect(mapStateToProps, null)(SectionQuestion);
