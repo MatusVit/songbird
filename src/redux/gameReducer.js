@@ -1,8 +1,10 @@
 import { NEXT_STEP } from "./types";
 
 const initialState = {
+  score: 0,
   step: 0,
   currentBirdNumber: 0,
+  answersArray: [],
 };
 
 export const gameReducer = (state = initialState, action) => {

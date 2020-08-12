@@ -24,6 +24,10 @@
   background-color: #008966;
 }
 
+.header .list-group-item.current {
+  background-color: #00bc8c;
+}
+
 .question__image {
   width: 200px;
   height: 155px;

@@ -1,9 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
-export default ({ array }) => {
+const Header = ({ array }) => {
+  //  const dispatch = useDispatch();
+  const { step, score } = useSelector((state) => state.gameState);
+  console.log("step=", step, " score=", score);
+
   const listQuestionElementsArray = array.map((question) => (
     <li
-      className="list-group-item flex-fill text-center py-md-2 py-1"
+      // todo: add class 'current'
+      className="list-group-item flex-fill text-center py-md-2 py-1 "
       key={question.toString()}
     >
       {question}
@@ -15,7 +21,7 @@ export default ({ array }) => {
       <div className="row">
         <div className="col d-flex justify-content-between">
           <div className="logo"></div>
-          <h5 className="d-flex align-items-center">Score: 0</h5>
+          <h5 className="d-flex align-items-center">Score: {score}}</h5>
         </div>
       </div>
 
@@ -29,3 +35,5 @@ export default ({ array }) => {
     </header>
   );
 };
+
+export default Header;
