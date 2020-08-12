@@ -1,27 +1,32 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-const Header = ({ array }) => {
+const Header = () => {
   //  const dispatch = useDispatch();
   const { step, score } = useSelector((state) => state.gameState);
-  console.log("step=", step, " score=", score);
+  const { listQuestionArray } = useSelector((state) => state.data);
+  const listQuestionElementsArray = listQuestionArray.map((question, index) => {
+    let classAdd = false;
+    if (step === index) classAdd = true;
 
-  const listQuestionElementsArray = array.map((question) => (
-    <li
-      // todo: add class 'current'
-      className="list-group-item flex-fill text-center py-md-2 py-1 "
-      key={question.toString()}
-    >
-      {question}
-    </li>
-  ));
+    return (
+      <li
+        className={`list-group-item flex-fill text-center py-md-2 py-1 ${
+          classAdd ? "current" : ""
+        }`}
+        key={question.toString()}
+      >
+        {question}
+      </li>
+    );
+  });
 
   return (
     <header className="header">
       <div className="row">
         <div className="col d-flex justify-content-between">
           <div className="logo"></div>
-          <h5 className="d-flex align-items-center">Score: {score}}</h5>
+          <h5 className="d-flex align-items-center">Score: {score}</h5>
         </div>
       </div>
 

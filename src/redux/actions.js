@@ -1,4 +1,6 @@
-import { NEXT_STEP, GET_RANDOM_BIRD } from "./types";
+import { NEXT_STEP } from "./types";
+
+
 
 export function nextStep() {
   return {
@@ -6,8 +8,10 @@ export function nextStep() {
   }
 }
 
-export function getRandomBird() {
-  return {
-    type: GET_RANDOM_BIRD,
-  }
-}
+// export function getRandomBird() {
+//   const randomNumber = Math.floor((Math.random() * 6));
+//   return {
+//     type: GET_RANDOM_BIRD,
+//     payload: { randomNumber },
+//   }
+// }

@@ -5,7 +5,6 @@ import ButtonNext from "./components/ButtonNext";
 import SectionQuestion from "./components/SectionQuestion";
 import SectionAnswers from "./components/SectionAnswers";
 import SectionDescription from "./components/SectionDescription";
-import { listQuestionArray } from "./data/birdsData";
 import birdsData from "./data/birds";
 
 function App() {
@@ -14,7 +13,7 @@ function App() {
 
   return (
     <div className="container pt-3 text-white">
-      <Header array={listQuestionArray} />
+      <Header />
       <SectionQuestion />
 
       <div className="row">

@@ -125,3 +125,12 @@
   height: 2px;
   background: #b1b1b1;
 }
+
+.button-next .btn.btn-outline-secondary.btn-block.active {
+  background-color: #008966;
+  border: none;
+}
+
+.button-next .btn.btn-outline-secondary.btn-block.active:hover {
+  background-color: #00bc8c;
+}
