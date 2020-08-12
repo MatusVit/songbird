@@ -10,12 +10,9 @@ const initialState = {
 export const gameReducer = (state = initialState, action) => {
   switch (action.type) {
     case NEXT_STEP:
-      console.log(state);
       const newStep = state.step + 1
       return { ...state, step: newStep }
 
     default: return state;
   }
-
-
 } 
