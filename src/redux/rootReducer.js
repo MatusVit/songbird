@@ -20,10 +20,20 @@ export const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case NEXT_STEP:
       const newStep = state.step + 1
-      return { ...state, step: newStep, currentBirdNumber: getRandomNumber() }
+      return {
+        ...state, step: newStep,
+        currentBirdNumber: getRandomNumber(),
+        lastSelectedBirdNumber: null,
+        answersArray: [],
+        isCorrectAnswer: false,
+      }
     case CHOOSE_ANSWER:
       const selectedBirdObject = state.dataBirdsArray[state.step].find((object) => object.name === action.payload);
-      if (state.answersArray.includes(selectedBirdObject.id)) return { ...state, lastSelectedBirdNumber: selectedBirdObject.id };
+      if (state.isCorrectAnswer || state.answersArray.includes(selectedBirdObject.id))
+        return {
+          ...state,
+          lastSelectedBirdNumber: selectedBirdObject.id
+        };
       return {
         ...state,
         lastSelectedBirdNumber: selectedBirdObject.id,

@@ -14,7 +14,13 @@ let roundArray = null;
 let currentStep = null;
 
 export default () => {
-  const { step, dataBirdsArray } = useSelector((state) => state);
+  const {
+    step,
+    dataBirdsArray,
+    currentBirdNumber,
+    answersArray,
+    isCorrectAnswer,
+  } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   if (currentStep !== step) {
@@ -22,12 +28,19 @@ export default () => {
     currentStep = step;
   }
 
-  const listAnswersElementsArray = roundArray.map((element) => (
-    <li className="list-group-item" key={element.id}>
-      <span className="list-point"></span>
-      {element.name}
-    </li>
-  ));
+  const listAnswersElementsArray = roundArray.map((element) => {
+    let pointerStyle = "";
+    if (answersArray.includes(element.id)) pointerStyle = "error";
+    if (isCorrectAnswer && element.id === currentBirdNumber + 1)
+      pointerStyle = "right";
+
+    return (
+      <li className="list-group-item" key={element.id}>
+        <span className={`list-point ${pointerStyle}`}></span>
+        {element.name}
+      </li>
+    );
+  });
 
   return (
     <section className="section-answers">

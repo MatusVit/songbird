@@ -5,7 +5,6 @@ import ButtonNext from "./components/ButtonNext";
 import SectionQuestion from "./components/SectionQuestion";
 import SectionAnswers from "./components/SectionAnswers";
 import SectionDescription from "./components/SectionDescription";
-import birdsData from "./data/birds";
 
 function App() {
   return (
