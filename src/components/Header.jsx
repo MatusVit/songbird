@@ -2,9 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  //  const dispatch = useDispatch();
-  const { step, score } = useSelector((state) => state.gameState);
-  const { listQuestionArray } = useSelector((state) => state.data);
+  const { step, score, listQuestionArray } = useSelector((state) => state);
   const listQuestionElementsArray = listQuestionArray.map((question, index) => {
     let classAdd = false;
     if (step === index) classAdd = true;

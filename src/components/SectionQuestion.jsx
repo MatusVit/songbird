@@ -16,7 +16,7 @@ const SectionQuestion = ({ cardBird, questionImagePath, isCorrectAnswer }) => {
           <h3>{isCorrectAnswer ? cardBird.name : "******"}</h3>
         </li>
         <li className="list-group-item">
-          <Player url={cardBird.audio} />
+          <Player url={cardBird.audio} isAuto={true} />
         </li>
       </ul>
     </section>
@@ -24,11 +24,10 @@ const SectionQuestion = ({ cardBird, questionImagePath, isCorrectAnswer }) => {
 };
 
 const mapStateToProps = (state) => {
-  const step = state.gameState.step;
-  const currentBird = state.gameState.currentBirdNumber;
-  const cardBird = state.data.dataBirdsArray[step][currentBird];
-  const questionImagePath = state.data.questionImagePath;
-  const isCorrectAnswer = state.gameState.isCorrectAnswer;
+  const { step, currentBirdNumber } = state;
+  const cardBird = state.dataBirdsArray[step][currentBirdNumber];
+  const questionImagePath = state.questionImagePath;
+  const isCorrectAnswer = state.isCorrectAnswer;
 
   return {
     cardBird,

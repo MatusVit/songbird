@@ -8,9 +8,6 @@ import SectionDescription from "./components/SectionDescription";
 import birdsData from "./data/birds";
 
 function App() {
-  const roundArray = birdsData[0];
-  const currentBirdCard = roundArray[0];
-
   return (
     <div className="container pt-3 text-white">
       <Header />
@@ -18,10 +15,10 @@ function App() {
 
       <div className="row">
         <div className="col-12 col-md-6 pr-2">
-          <SectionAnswers roundArray={roundArray} />
+          <SectionAnswers />
         </div>
         <div className="col-12 col-md-6 pl-2">
-          <SectionDescription cardBird={currentBirdCard} />
+          <SectionDescription />
         </div>
       </div>
 

@@ -1,2 +1,3 @@
 export const NEXT_STEP = 'GAME/NEXT_STEP';
+export const CHOOSE_ANSWER = 'GAME/CHOOSE_ANSWER';
 // export const GET_RANDOM_BIRD = 'GAME/GET_RANDOM_BIRD';

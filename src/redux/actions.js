@@ -1,6 +1,4 @@
-import { NEXT_STEP } from "./types";
-
-
+import { NEXT_STEP, CHOOSE_ANSWER } from "./types";
 
 export function nextStep() {
   return {
@@ -8,10 +6,9 @@ export function nextStep() {
   }
 }
 
-// export function getRandomBird() {
-//   const randomNumber = Math.floor((Math.random() * 6));
-//   return {
-//     type: GET_RANDOM_BIRD,
-//     payload: { randomNumber },
-//   }
-// }
+export function chooseAnswer(choiceName) {
+  return {
+    type: CHOOSE_ANSWER,
+    payload: choiceName,
+  }
+}

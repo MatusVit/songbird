@@ -4,7 +4,7 @@ import { nextStep } from "../redux/actions";
 
 const ButtonNext = () => {
   const dispatch = useDispatch();
-  const { isCorrectAnswer } = useSelector((state) => state.gameState);
+  const { isCorrectAnswer } = useSelector((state) => state);
 
   return (
     <section className="button-next my-3">

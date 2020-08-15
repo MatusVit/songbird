@@ -1,5 +1,6 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { chooseAnswer } from "../redux/actions";
 
 const shuffle = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
@@ -9,10 +10,17 @@ const shuffle = (array) => {
   return array;
 };
 
+let roundArray = null;
+let currentStep = null;
+
 export default () => {
-  const { step } = useSelector((state) => state.gameState);
-  const { dataBirdsArray } = useSelector((state) => state.data);
-  const roundArray = shuffle([...dataBirdsArray[step]]);
+  const { step, dataBirdsArray } = useSelector((state) => state);
+  const dispatch = useDispatch();
+
+  if (currentStep !== step) {
+    roundArray = shuffle([...dataBirdsArray[step]]);
+    currentStep = step;
+  }
 
   const listAnswersElementsArray = roundArray.map((element) => (
     <li className="list-group-item" key={element.id}>
@@ -23,7 +31,15 @@ export default () => {
 
   return (
     <section className="section-answers">
-      <ul className="list-answers list-group">{listAnswersElementsArray}</ul>
+      <ul
+        className="list-answers list-group"
+        onClick={(event) => {
+          const element = event.target.closest(".list-group-item");
+          if (element) dispatch(chooseAnswer(element.textContent));
+        }}
+      >
+        {listAnswersElementsArray}
+      </ul>
     </section>
   );
 };

@@ -1,7 +1,26 @@
 import React from "react";
 import AudioPlayer from "./Player";
+import { useSelector } from "react-redux";
 
-export default ({ cardBird }) => {
+export default () => {
+  const { dataBirdsArray, step, lastSelectedBirdNumber } = useSelector(
+    (state) => state
+  );
+  if (lastSelectedBirdNumber === null) {
+    return (
+      <section className="section-description jumbotron rounded p-3 m-0">
+        <div className="row">
+          <div className="col">
+            <p className="description__text">
+              Послушайте плеер. <br /> Выберите птицу из списка
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  const cardBird = dataBirdsArray[step][lastSelectedBirdNumber - 1];
   return (
     <section className="section-description jumbotron rounded p-3 m-0">
       <div className="row">
@@ -14,10 +33,10 @@ export default ({ cardBird }) => {
               <h4>{cardBird.name}</h4>
             </li>
             <li className="list-group-item">
-              <span>Parus major</span>
+              <span>{cardBird.species}</span>
             </li>
             <li className="list-group-item">
-              <AudioPlayer />
+              <AudioPlayer url={cardBird.audio} isAuto={false} />
             </li>
           </ul>
         </div>
