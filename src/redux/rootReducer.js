@@ -1,14 +1,14 @@
 import { listQuestionArray } from '../data/birdsData';
 import dataBirds from '../data/birds';
 import { NEXT_STEP, CHOOSE_ANSWER, } from "./types";
-import { CORRECT_ANSWER_COST, WRONG_ANSWER_COST } from '../data/constants';
+import { CORRECT_ANSWER_COST, WRONG_ANSWER_COST, IMAGE_QUESTION_URL } from '../data/constants';
 
 const getRandomNumber = () => Math.floor((Math.random() * 6));
 
 const initialState = {
   listQuestionArray,
   dataBirdsArray: dataBirds,
-  questionImagePath: '/images/question-bird.jpg',
+  questionImagePath: IMAGE_QUESTION_URL,
   score: 0,
   step: 0,
   currentBirdNumber: getRandomNumber(),
@@ -33,10 +33,7 @@ export const rootReducer = (state = initialState, action) => {
       }
 
     case CHOOSE_ANSWER:
-      const selectedBirdObjectId = state
-        .dataBirdsArray[state.step]
-        .find((object) => object.name === action.payload)
-        .id;
+      const selectedBirdObjectId = action.payload;
       if (state.isCorrectAnswer || state.answersArray.includes(selectedBirdObjectId))
         return {
           ...state,

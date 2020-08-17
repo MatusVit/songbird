@@ -6,9 +6,9 @@ export function nextStep() {
   }
 }
 
-export function chooseAnswer(choiceName) {
+export function chooseAnswer(choiceId) {
   return {
     type: CHOOSE_ANSWER,
-    payload: choiceName,
+    payload: choiceId,
   }
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { chooseAnswer } from "../redux/actions";
+import { AUDIO_ERROR_URL, AUDIO_WIN_URL } from "../data/constants";
 
 const shuffle = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
@@ -12,6 +13,8 @@ const shuffle = (array) => {
 
 let roundArray = null;
 let currentStep = null;
+
+const audio = new Audio();
 
 export default () => {
   const {
@@ -35,12 +38,22 @@ export default () => {
       pointerStyle = "right";
 
     return (
-      <li className="list-group-item" key={element.id}>
+      <li className="list-group-item" key={element.id} data-id={element.id}>
         <span className={`list-point ${pointerStyle}`}></span>
         {element.name}
       </li>
     );
   });
+
+  const handleClick = (element) => {
+    if (!isCorrectAnswer) {
+      if (+element.dataset.id === currentBirdNumber + 1)
+        audio.src = AUDIO_WIN_URL;
+      else audio.src = AUDIO_ERROR_URL;
+      audio.play();
+    }
+    dispatch(chooseAnswer(+element.dataset.id));
+  };
 
   return (
     <section className="section-answers">
@@ -48,7 +61,7 @@ export default () => {
         className="list-answers list-group"
         onClick={(event) => {
           const element = event.target.closest(".list-group-item");
-          if (element) dispatch(chooseAnswer(element.textContent));
+          if (element) handleClick(element);
         }}
       >
         {listAnswersElementsArray}

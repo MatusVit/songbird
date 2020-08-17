@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Player from "./Player";
+import { HIDDEN_BIRD_NAME } from "../data/constants";
 
 const SectionQuestion = ({ cardBird, questionImagePath, isCorrectAnswer }) => {
   return (
@@ -13,7 +14,7 @@ const SectionQuestion = ({ cardBird, questionImagePath, isCorrectAnswer }) => {
 
       <ul className="question__list list-group list-group-flush ml-3">
         <li className="list-group-item">
-          <h3>{isCorrectAnswer ? cardBird.name : "******"}</h3>
+          <h3>{isCorrectAnswer ? cardBird.name : HIDDEN_BIRD_NAME}</h3>
         </li>
         <li className="list-group-item">
           <Player url={cardBird.audio} isAuto={true} />
