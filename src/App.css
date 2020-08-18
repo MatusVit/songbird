@@ -10,6 +10,7 @@
 .section-description .list-group-item,
 .button-next {
   background-color: #303030;
+  border: none;
 }
 
 .logo {
@@ -37,7 +38,7 @@
 }
 
 .question__list {
-  width: calc(100% - 240px);
+  min-width: 240px;
 }
 
 .list-group-item:not(:last-child) {
@@ -46,6 +47,10 @@
 
 .list-question .list-group-item {
   border-bottom: none;
+}
+
+.section-answers {
+  background-color: #303030;
 }
 
 .list-answers .list-group-item {
@@ -73,6 +78,11 @@
 
 .list-point.right {
   background-color: #00bc8c;
+}
+
+.section-answers,
+.section-description {
+  height: 100%;
 }
 
 .description__image {
@@ -126,11 +136,16 @@
   background: #b1b1b1;
 }
 
-.btn.btn-outline-secondary.active {
+.main .btn.btn-outline-secondary.active {
   background-color: #008966;
   border: none;
 }
 
 .btn.btn-outline-secondary.active:hover {
   background-color: #00bc8c;
+  border: none;
+}
+
+.button-next .btn.btn-outline-secondary {
+  border: none;
 }

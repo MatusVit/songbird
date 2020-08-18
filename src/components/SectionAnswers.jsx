@@ -40,7 +40,11 @@ export default () => {
       pointerStyle = "right";
 
     return (
-      <li className="list-group-item" key={element.id} data-id={element.id}>
+      <li
+        className="list-group-item py-3"
+        key={element.id}
+        data-id={element.id}
+      >
         <span className={`list-point ${pointerStyle}`}></span>
         {element.name}
       </li>
@@ -58,7 +62,7 @@ export default () => {
   };
 
   return (
-    <section className="section-answers">
+    <section className="section-answers rounded">
       <ul
         className="list-answers list-group"
         onClick={(event) => {

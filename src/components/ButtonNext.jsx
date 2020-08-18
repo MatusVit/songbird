@@ -7,7 +7,7 @@ const ButtonNext = () => {
   const { isCorrectAnswer } = useSelector((state) => state);
 
   return (
-    <section className="button-next my-3">
+    <section className="button-next mb-3 rounded">
       <div className="row">
         <div className="col">
           <button
