@@ -6,6 +6,7 @@ import SectionQuestion from "./SectionQuestion";
 import SectionAnswers from "./SectionAnswers";
 import SectionDescription from "./SectionDescription";
 import ButtonNext from "./ButtonNext";
+import { newGame } from "../redux/actions";
 
 export default () => {
   const { step, listQuestionArray, score } = useSelector((state) => state);
@@ -17,7 +18,7 @@ export default () => {
     <button
       type="button"
       className="btn btn-outline-secondary active my-4"
-      // onClick={() => dispatch(nextStep())}
+      onClick={() => dispatch(newGame())}
     >
       Попробовать еще раз
     </button>
@@ -37,7 +38,11 @@ export default () => {
     </main>
   );
 
-  const mainBase = (
+  if (step === listQuestionArray.length) {
+    return mainFinal;
+  }
+
+  return (
     <main className="main">
       <SectionQuestion />
       <div className="row">
@@ -51,8 +56,4 @@ export default () => {
       <ButtonNext />
     </main>
   );
-
-  if (step === listQuestionArray.length - 1) return mainFinal;
-  return mainBase;
-  // return mainFinal;
 };

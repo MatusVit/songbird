@@ -1,6 +1,6 @@
 import { listQuestionArray } from '../data/birdsData';
 import dataBirds from '../data/birds';
-import { NEXT_STEP, CHOOSE_ANSWER, } from "./types";
+import { NEXT_STEP, CHOOSE_ANSWER, NEW_GAME, } from "./types";
 import { CORRECT_ANSWER_COST, WRONG_ANSWER_COST, IMAGE_QUESTION_URL } from '../data/constants';
 
 const getRandomNumber = () => Math.floor((Math.random() * 6));
@@ -45,6 +45,8 @@ export const rootReducer = (state = initialState, action) => {
         answersArray: state.answersArray.concat([selectedBirdObjectId],),
         isCorrectAnswer: selectedBirdObjectId === state.currentBirdNumber + 1,
       }
+    case NEW_GAME:
+      return initialState;
 
     default: return state;
   }

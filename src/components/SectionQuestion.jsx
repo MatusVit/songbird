@@ -1,9 +1,18 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import Player from "./Player";
 import { HIDDEN_BIRD_NAME } from "../data/constants";
 
-const SectionQuestion = ({ cardBird, questionImagePath, isCorrectAnswer }) => {
+export default () => {
+  const {
+    step,
+    currentBirdNumber,
+    dataBirdsArray,
+    isCorrectAnswer,
+    questionImagePath,
+  } = useSelector((state) => state);
+  const cardBird = dataBirdsArray[step][currentBirdNumber];
+
   return (
     <section className="section-question jumbotron rounded my-3 p-3 d-flex flex-wrap justify-content-center">
       <img
@@ -25,18 +34,3 @@ const SectionQuestion = ({ cardBird, questionImagePath, isCorrectAnswer }) => {
     </section>
   );
 };
-
-const mapStateToProps = (state) => {
-  const { step, currentBirdNumber } = state;
-  const cardBird = state.dataBirdsArray[step][currentBirdNumber];
-  const questionImagePath = state.questionImagePath;
-  const isCorrectAnswer = state.isCorrectAnswer;
-
-  return {
-    cardBird,
-    questionImagePath,
-    isCorrectAnswer,
-  };
-};
-
-export default connect(mapStateToProps, null)(SectionQuestion);
