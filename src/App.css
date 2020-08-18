@@ -126,11 +126,11 @@
   background: #b1b1b1;
 }
 
-.button-next .btn.btn-outline-secondary.btn-block.active {
+.btn.btn-outline-secondary.active {
   background-color: #008966;
   border: none;
 }
 
-.button-next .btn.btn-outline-secondary.btn-block.active:hover {
+.btn.btn-outline-secondary.active:hover {
   background-color: #00bc8c;
 }

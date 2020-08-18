@@ -18,7 +18,7 @@ const ButtonNext = () => {
             disabled={!isCorrectAnswer}
             onClick={() => dispatch(nextStep())}
           >
-            Next Level
+            Дальше
           </button>
         </div>
       </div>
