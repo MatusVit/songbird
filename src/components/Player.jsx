@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { createRef } from "react";
 import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 
-export default ({ url, isAuto }) => {
+export default ({ url, isAuto, isStop }) => {
+  const player = createRef();
+  useEffect(() => {
+    if (isStop) {
+      player.current.audio.current.pause();
+      player.current.audio.current.currentTime = 0;
+    }
+  });
+
   return (
     <AudioPlayer
+      ref={player}
       src={url}
       volume={0.8}
       autoPlay={isAuto}

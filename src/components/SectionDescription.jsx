@@ -36,7 +36,7 @@ export default () => {
               <span>{cardBird.species}</span>
             </li>
             <li className="list-group-item my-2">
-              <AudioPlayer url={cardBird.audio} isAuto={false} />
+              <AudioPlayer url={cardBird.audio} isAuto={false} isStop={false} />
             </li>
           </ul>
         </div>

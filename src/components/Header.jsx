@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const { step, score, listQuestionArray } = useSelector((state) => state);
+
   const listQuestionElementsArray = listQuestionArray.map((question, index) => {
     let classAdd = false;
     if (step === index) classAdd = true;
