@@ -1,7 +1,7 @@
 export const CORRECT_ANSWER_COST = 5;
 export const WRONG_ANSWER_COST = 1;
 
-export const HIDDEN_BIRD_NAME = "------ ?"
+export const HIDDEN_BIRD_NAME = "*****"
 
 
 export const AUDIO_OBJECT = new Audio();

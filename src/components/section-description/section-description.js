@@ -1,6 +1,8 @@
 import React from "react";
-import AudioPlayer from "./Player";
+import AudioPlayer from "../player";
 import { useSelector } from "react-redux";
+
+import './section-description.css'
 
 export default () => {
   const { dataBirdsArray, step, lastSelectedBirdNumber } = useSelector(

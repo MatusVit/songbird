@@ -1,0 +1,15 @@
+.question__image {
+  width: 200px;
+  height: 155px;
+  border-radius: 10px;
+  margin: 0;
+  object-fit: cover;
+}
+
+.question__list {
+  min-width: 240px;
+}
+
+.list-question .list-group-item {
+  border-bottom: none;
+}

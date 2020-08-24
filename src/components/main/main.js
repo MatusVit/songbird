@@ -1,12 +1,15 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { newGame } from "../../redux/actions";
 
-import { CORRECT_ANSWER_COST, IMAGE_FINAL_URL } from "../data/constants";
-import SectionQuestion from "./SectionQuestion";
-import SectionAnswers from "./SectionAnswers";
-import SectionDescription from "./SectionDescription";
-import ButtonNext from "./ButtonNext";
-import { newGame } from "../redux/actions";
+import { CORRECT_ANSWER_COST, IMAGE_FINAL_URL } from "../../data/constants";
+
+import SectionQuestion from "../section-question";
+import SectionAnswers from "../section-answers";
+import SectionDescription from "../section-description";
+import ButtonNext from "../button-next";
+
+import './main.css'
 
 export default () => {
   const { step, listQuestionArray, score } = useSelector((state) => state);

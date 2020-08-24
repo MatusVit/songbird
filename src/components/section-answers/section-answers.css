@@ -1,0 +1,31 @@
+.section-answers {
+  height: 100%;
+  background-color: #303030;
+}
+
+.list-answers .list-group-item {
+  cursor: pointer;
+}
+
+.list-answers .list-group-item:hover {
+  background-color: #454545;
+  transition: 0.5s;
+}
+
+.list-point {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 15px;
+  border-radius: 50%;
+  transition: 0.1s;
+  background-color: #555;
+}
+
+.list-point.error {
+  background-color: #d62c1a;
+}
+
+.list-point.right {
+  background-color: #00bc8c;
+}

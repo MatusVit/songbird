@@ -1,6 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { nextStep } from "../redux/actions";
+import { nextStep } from "../../redux/actions";
+
+import './button-next.css';
 
 const ButtonNext = () => {
   const dispatch = useDispatch();
@@ -14,7 +16,7 @@ const ButtonNext = () => {
             type="button"
             className={`btn btn-outline-secondary btn-block ${
               isCorrectAnswer ? "active" : ""
-            }`}
+              }`}
             disabled={!isCorrectAnswer}
             onClick={() => dispatch(nextStep())}
           >

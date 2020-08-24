@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import Player from "./Player";
-import { HIDDEN_BIRD_NAME } from "../data/constants";
+import Player from "../player";
+import { HIDDEN_BIRD_NAME } from "../../data/constants";
+
+import './section-question.css'
 
 export default () => {
   const {

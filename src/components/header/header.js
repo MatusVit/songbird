@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
+import './header.css';
+
 const Header = () => {
   const { step, score, listQuestionArray } = useSelector((state) => state);
 
@@ -12,7 +14,7 @@ const Header = () => {
       <li
         className={`list-group-item flex-fill text-center py-md-2 py-1 ${
           classAdd ? "current" : ""
-        }`}
+          }`}
         key={question.toString()}
       >
         {question}

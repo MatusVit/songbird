@@ -1,11 +1,13 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { chooseAnswer } from "../redux/actions";
+import { chooseAnswer } from "../../redux/actions";
 import {
   AUDIO_ERROR_URL,
   AUDIO_WIN_URL,
   AUDIO_OBJECT,
-} from "../data/constants";
+} from "../../data/constants";
+
+import './section-answers.css';
 
 const shuffle = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
