@@ -1,0 +1,15 @@
+.header .list-group-item {
+  background-color: #008966;
+}
+
+.header .list-group-item.current {
+  background-color: #00bc8c;
+}
+
+.logo {
+  background-image: url(./logo.svg);
+  width: 200px;
+  height: 55px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

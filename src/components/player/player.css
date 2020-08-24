@@ -1,0 +1,38 @@
+.list-group-item .rhap_container {
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
+  outline-style: none;
+}
+
+.list-group-item .rhap_container button,
+.rhap_progress-container,
+.rhap_volume-bar-area {
+  outline-style: none;
+}
+
+.rhap_container .rhap_progress-container {
+  margin-right: 0;
+}
+
+.rhap_container .rhap_progress-bar {
+  height: 3px;
+}
+
+.rhap_controls-section {
+  margin-left: 8px;
+  font-size: 0.84rem;
+  color: #a8a8a8;
+}
+
+.rhap_container .rhap_time {
+  margin: 0 10px;
+  min-width: 25px;
+  color: #a8a8a8;
+  font-size: 0.84rem;
+}
+
+.rhap_container .rhap_volume-bar {
+  height: 2px;
+  background: #b1b1b1;
+}
